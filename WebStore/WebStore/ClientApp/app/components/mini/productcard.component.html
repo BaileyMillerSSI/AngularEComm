@@ -14,10 +14,10 @@
     </div>
     <div class="card-footer">
         <div class="col-xs-6 text-left">
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <input value="Go Somewhere" type="button" class="btn btn-primary"/>
         </div>
         <div class="col-xs-6 text-right">
-            <a href="#" class="btn btn-success">Buy NOW!</a>
+            <input value="{{GetCanBuy()}}" type="button" class="btn btn-success" [disabled]="!IsAvailable()"/>
         </div>
     </div>
 </div>

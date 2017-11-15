@@ -15,11 +15,24 @@ export class ProductCardComponent implements Product {
     @Input() IsSaleItem: boolean;
     @Input() Title: string;
 
+    public GetCanBuy(): string
+    {
+        if (this.IsAvailable()) {
+            return `BUY NOW`;
+        } else
+        {
+            return `N/A`;
+        }
+    }
 
+    public IsAvailable(): boolean
+    {
+        return this.StockCount != 0;
+    }
 
     public GetStockListing(): string
     {
-        if (this.StockCount != 0) {
+        if (this.IsAvailable()) {
             return `${this.StockCount} remaining`;
         } else
         {
