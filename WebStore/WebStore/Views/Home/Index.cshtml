@@ -1,9 +1,18 @@
-@{
-    ViewData["Title"] = "Home Page";
-}
+<app>
+    <div class="loader-container circle-pulse-multiple">
 
-@*<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>*@
-<app>Loading...</app>
+        <div class="loader">
+
+            <div class="circle-1"></div>
+
+            <div class="circle-2"></div>
+
+            <div class="circle-3"></div>
+
+        </div>
+
+    </div>
+</app>
 <script src="~/dist/vendor.js" asp-append-version="true"></script>
 @section scripts {
     <script src="~/dist/main-client.js" asp-append-version="true"></script>

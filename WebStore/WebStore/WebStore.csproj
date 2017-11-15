@@ -21,7 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\models\product.interface.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\loadingIcon.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\mini\productcard.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\product.interface.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

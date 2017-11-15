@@ -1,14 +1,22 @@
 ﻿<div class="card">
-    <img class="card-img-top" src="http://lorempixel.com/380/180/abstract" width="380" height="180" alt="Card image cap">
+    <img class="card-img-top" src="http://lorempixel.com/310/180/abstract" width="310" height="180" alt="Card image cap">
+    <div class="card-header">
+        <div class="col-xs-6 text-left">
+            <p class="no-margin">{{ Price | currency:'USD':'symbol'}}</p>
+        </div>
+        <div class="col-xs-6 text-right">
+            <p class="no-margin">{{GetStockListing()}}</p>
+        </div>
+    </div>
     <div class="card-body">
         <h4 class="card-title">{{Title}}</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
     <div class="card-footer">
-        <div class="col-lg-6 text-left">
+        <div class="col-xs-6 text-left">
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-        <div class="col-lg-6 text-right">
+        <div class="col-xs-6 text-right">
             <a href="#" class="btn btn-success">Buy NOW!</a>
         </div>
     </div>

@@ -1,17 +1,25 @@
 import { Component } from '@angular/core';
 
+
+import { Product } from '../../models/product.interface';
+
 @Component({
     selector: 'home',
     templateUrl: './home.component.html'
 })
 export class HomeComponent
 {
-    products: string[] = new Array<string>();
+    products: Product[] = new Array<Product>();
 
     constructor()
     {
-        for (var i = 0; i < this.getRandomArbitrary(1, 50); i++) {
-            this.products.push(`Product: ${i+1}`);
+        for (var i = 0; i < this.getRandomArbitrary(25, 100); i++) {
+            this.products.push(
+                {
+                    Title: `Product ${i + 1}`,
+                    Price: this.getRandomArbitrary(1, 10),
+                    StockCount: parseInt(this.getRandomArbitrary(0, 5).toString())
+                } as Product);
         }
     }
 
