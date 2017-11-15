@@ -21,11 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\Mini Components\product-card.component.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\Mini Components\product-card.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\mini\productcard.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

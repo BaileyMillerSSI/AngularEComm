@@ -7,10 +7,13 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 
+import { ProductCardComponent } from './components/mini/productcard.component';
+
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        ProductCardComponent
     ],
     imports: [
         CommonModule,
