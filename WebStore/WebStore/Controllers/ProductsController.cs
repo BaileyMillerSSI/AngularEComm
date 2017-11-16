@@ -21,7 +21,8 @@ namespace WebStore.Controllers
         }
 
 
-        private async Task<List<Product>> GetProductsAsync()
+
+        public async Task<List<Product>> GetProductsAsync()
         {
             return await Task.Run(()=> 
             {
@@ -37,7 +38,7 @@ namespace WebStore.Controllers
                         Title = $"Product: {i + 1}",
                         StockCount = random.Next(0, 10),
                         Price = double.Parse($"{random.Next(1, 10)}.{random.Next(0, 99)}"),
-                        IsSaleItem = (random.Next(0, 1) == 1 ? true: false)
+                        IsSaleItem = (random.Next(0, 10) % 2 == 0 ? true: false)
                     });
                 }
 
