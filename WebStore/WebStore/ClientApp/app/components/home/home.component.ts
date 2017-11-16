@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { Http, Response } from "@angular/http";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 import { Product } from '../../models/product.interface';
 
@@ -11,21 +13,14 @@ export class HomeComponent
 {
     products: Product[] = new Array<Product>();
 
-    constructor()
+    constructor(private web: Http)
     {
-        for (var i = 0; i < this.getRandomArbitrary(25, 100); i++) {
-            this.products.push(
-                {
-                    Title: `Product ${i + 1}`,
-                    Price: this.getRandomArbitrary(1, 10),
-                    StockCount: parseInt(this.getRandomArbitrary(0, 5).toString())
-                } as Product);
-        }
-    }
-
-    getRandomArbitrary(min: number, max: number)
-    {
-        return Math.random() * (max - min) + min;
+        web.get('/api/products/').map(result => {
+            return result.json() as Product[];
+        }).subscribe(data =>
+        {
+            this.products = data;
+        });
     }
 }
 

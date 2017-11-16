@@ -8,12 +8,11 @@ import { Product } from '../../models/product.interface';
     templateUrl: './productcard.component.html'
 })
 export class ProductCardComponent implements Product {
-
-
-    @Input() Price: number;
-    @Input() StockCount: number;
-    @Input() IsSaleItem: boolean;
-    @Input() Title: string;
+    
+    @Input() price: number;
+    @Input() stockCount: number;
+    @Input() isSaleItem: boolean;
+    @Input() title: string;
 
     public GetCanBuy(): string
     {
@@ -27,13 +26,13 @@ export class ProductCardComponent implements Product {
 
     public IsAvailable(): boolean
     {
-        return this.StockCount != 0;
+        return this.stockCount != 0;
     }
 
     public GetStockListing(): string
     {
         if (this.IsAvailable()) {
-            return `${this.StockCount} remaining`;
+            return `${this.stockCount} remaining`;
         } else
         {
             return 'Out of stock!';
