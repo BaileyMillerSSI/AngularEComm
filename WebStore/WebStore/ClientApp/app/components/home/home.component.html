@@ -3,7 +3,10 @@
         <product-card [title]="product.title" [price]="product.price" [stockCount]="product.stockCount" [url]="product.url"></product-card>
     </div>
 </div>
-<div class="row">
-    <button (click)="LoadMore()">Load More</button>
+<div *ngIf="loading" class="row text-center">
+    <h1>Loading</h1>
+</div>
+<div class="row justify-content-center">
+    <button class="btn btn-info margin-top margin-bot" [hidden]="products.length == 0" [disabled]="loading" (click)="LoadMore()">Load More</button>
 </div>
 
