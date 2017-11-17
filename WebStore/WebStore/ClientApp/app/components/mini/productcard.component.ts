@@ -13,6 +13,7 @@ export class ProductCardComponent implements Product {
     @Input() stockCount: number;
     @Input() isSaleItem: boolean;
     @Input() title: string;
+    @Input() url: string;
 
     public GetCanBuy(): string
     {

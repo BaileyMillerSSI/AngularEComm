@@ -4,5 +4,6 @@
     price: number;
     stockCount: number;
     isSaleItem: boolean;
+    url: string;
 
 }

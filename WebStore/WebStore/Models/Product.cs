@@ -12,5 +12,6 @@ namespace WebStore.Models
         public Double Price { get; set; }
         public int StockCount { get; set; }
         public bool IsSaleItem { get; set; }
+        public String Url { get; set; }
     }
 }

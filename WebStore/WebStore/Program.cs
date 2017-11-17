@@ -19,7 +19,12 @@ namespace WebStore
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                //.UseAzureAppServices()
                 .UseStartup<Startup>()
+                //.UseApplicationInsights()
                 .Build();
     }
 }

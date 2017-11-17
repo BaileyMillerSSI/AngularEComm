@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col-sm-3  justify-content-center" *ngFor="let product of products">
-        <product-card [title]="product.title" [price]="product.price" [stockCount]="product.stockCount"></product-card>
+        <product-card [title]="product.title" [price]="product.price" [stockCount]="product.stockCount" [url]="product.url"></product-card>
     </div>
+</div>
+<div class="row">
+    <button (click)="LoadMore()">Load More</button>
 </div>
 
