@@ -15,6 +15,7 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 
 import { CartService } from './services/cart.service';
+import { CatalogService } from './services/catalog.service';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { CartService } from './services/cart.service';
         ])
     ],
     providers: [
-        CartService
+        CartService,
+        CatalogService
     ]
 })
 export class AppModuleShared {
