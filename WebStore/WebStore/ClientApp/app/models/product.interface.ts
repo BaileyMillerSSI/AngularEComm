@@ -5,5 +5,6 @@
     stockCount: number;
     isSaleItem: boolean;
     url: string;
+    id: string;
 
 }

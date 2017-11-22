@@ -24,7 +24,10 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\github-button\github-button.component.ts" />
+    <None Remove="ClientApp\app\components\nav-menu\nav-menu.component.ts" />
     <None Remove="ClientApp\app\models\product.interface.ts" />
+    <None Remove="ClientApp\app\services\cart.service.ts" />
+    <None Remove="ClientApp\app\services\catalog.service.ts" />
     <None Remove="Properties\PublishProfiles\Angular4Sale - Web Deploy.pubxml" />
     <None Remove="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
@@ -255,7 +258,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\github-button\github-button.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\mini\productcard.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\nav-menu\nav-menu.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\product.interface.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\cart.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\catalog.service.ts" />
   </ItemGroup>
 
   <ItemGroup>

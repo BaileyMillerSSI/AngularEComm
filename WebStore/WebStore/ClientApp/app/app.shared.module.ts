@@ -11,6 +11,11 @@ import { ProductCardComponent } from './components/mini/productcard.component';
 import { SavingComponent } from './components/saving/saving.component';
 import { LoadButtonComponent } from './components/load-button/load-button.component';
 import { GithubButtonComponent } from './components/github-button/github-button.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+
+
+import { CartService } from './services/cart.service';
+import { CatalogService } from './services/catalog.service';
 
 @NgModule({
     declarations: [
@@ -19,7 +24,8 @@ import { GithubButtonComponent } from './components/github-button/github-button.
         ProductCardComponent,
         SavingComponent,
         LoadButtonComponent,
-        GithubButtonComponent
+        GithubButtonComponent,
+        NavMenuComponent
     ],
     imports: [
         CommonModule,
@@ -30,6 +36,10 @@ import { GithubButtonComponent } from './components/github-button/github-button.
             { path: 'home', component: HomeComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        CartService,
+        CatalogService
     ]
 })
 export class AppModuleShared {

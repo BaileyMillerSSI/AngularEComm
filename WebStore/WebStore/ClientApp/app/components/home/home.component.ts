@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Product } from '../../models/product.interface';
+import { CatalogService } from '../../services/catalog.service';
 
 @Component({
     selector: 'home',
@@ -12,24 +13,14 @@ import { Product } from '../../models/product.interface';
 })
 export class HomeComponent
 {
-    products: Product[] = new Array<Product>();
-    loading: boolean = false;
-
-    constructor(private web: Http)
+    constructor(public CatalogService: CatalogService)
     {
-        this.loading = true;
-        web.get('/api/products/').map(result => {
-            return result.json() as Product[];
-        }).subscribe(data =>
-        {
-            this.products = data;
-            this.loading = false;
-        });
+        CatalogService.LoadInitial();
     }
 
     GetLoadingStatement(): string
     {
-        if (this.loading)
+        if (this.CatalogService.loading)
             return 'Loading . . .';
         else
             return 'Load More';
@@ -37,20 +28,7 @@ export class HomeComponent
 
     LoadMore(): void
     {
-        this.loading = true;
-        this.web.get(`/api/products/range?start=${this.products.length}&end=${this.products.length+25}`)
-            .map(result =>
-            {
-                return result.json() as Product[];
-            })
-            .subscribe(data =>
-            {
-                for (var i = 0; i < data.length; i++) {
-                    this.products.push(data[i]);
-                }
-
-                this.loading = false;
-        });
+        this.CatalogService.LoadMore();
     }
 }
 
