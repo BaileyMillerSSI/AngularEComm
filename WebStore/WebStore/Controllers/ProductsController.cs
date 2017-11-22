@@ -24,6 +24,8 @@ namespace WebStore.Controllers
         [Route("Range")]
         public async Task<IActionResult> GetRange([FromQuery]int start, [FromQuery] int end = 25)
         {
+            var random = new Random();
+            await Task.Delay(TimeSpan.FromSeconds(random.Next(10, 30)));
             return Ok(await GetProductsAsync(start, end));
         }
 

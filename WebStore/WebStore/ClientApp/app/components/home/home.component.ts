@@ -27,6 +27,14 @@ export class HomeComponent
         });
     }
 
+    GetLoadingStatement(): string
+    {
+        if (this.loading)
+            return 'Loading . . .';
+        else
+            return 'Load More';
+    }
+
     LoadMore(): void
     {
         this.loading = true;

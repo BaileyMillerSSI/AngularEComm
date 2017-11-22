@@ -22,7 +22,7 @@ namespace WebStore
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
-                //.UseAzureAppServices()
+                .UseAzureAppServices()
                 .UseStartup<Startup>()
                 //.UseApplicationInsights()
                 .Build();

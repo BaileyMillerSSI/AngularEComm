@@ -3,10 +3,10 @@
         <product-card [title]="product.title" [price]="product.price" [stockCount]="product.stockCount" [url]="product.url"></product-card>
     </div>
 </div>
-<div *ngIf="loading" class="row text-center">
-    <h1>Loading</h1>
-</div>
+
+<app-saving class="row justify-content-center" [height]="300" [loading]="loading" [loadingText]="'Loading Catalog'" *ngIf="loading && products.length == 0"></app-saving>
+
 <div class="row justify-content-center">
-    <button class="btn btn-info margin-top margin-bot" [hidden]="products.length == 0" [disabled]="loading" (click)="LoadMore()">Load More</button>
+    <load-button class="margin-top margin-bot" [Hidden]="products.length == 0" [Disabled]="loading" [Content]="GetLoadingStatement()" (Click)="LoadMore()" [Animate]="loading"></load-button>
 </div>
 

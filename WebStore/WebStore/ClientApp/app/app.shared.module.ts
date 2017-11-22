@@ -8,12 +8,16 @@ import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { ProductCardComponent } from './components/mini/productcard.component';
+import { SavingComponent } from './components/saving/saving.component';
+import { LoadButtonComponent } from './components/load-button/load-button.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        ProductCardComponent
+        ProductCardComponent,
+        SavingComponent,
+        LoadButtonComponent
     ],
     imports: [
         CommonModule,
