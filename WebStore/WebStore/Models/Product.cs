@@ -7,7 +7,7 @@ namespace WebStore.Models
 {
     public class Product
     {
-        public int ProductId { get; set; }
+        public string Id { get; set; }
         public String Title { get; set; }
         public Double Price { get; set; }
         public int StockCount { get; set; }

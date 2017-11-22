@@ -24,8 +24,10 @@ namespace WebStore.Controllers
         [Route("Range")]
         public async Task<IActionResult> GetRange([FromQuery]int start, [FromQuery] int end = 25)
         {
+#if (RELEASE)
             var random = new Random();
-            await Task.Delay(TimeSpan.FromSeconds(random.Next(5,10)));
+            await Task.Delay(TimeSpan.FromSeconds(random.Next(5, 10))); 
+#endif
             return Ok(await GetProductsAsync(start, end));
         }
 
@@ -39,9 +41,10 @@ namespace WebStore.Controllers
 
                 for (int i = start; i < end; i++)
                 {
-                    prods.Add(new Product()
-                    {
-                        ProductId = i,
+                    var hashedId = Guid.NewGuid().ToString();
+                prods.Add(new Product()
+                {
+                    Id = hashedId.Substring(0, hashedId.IndexOf('-')),
                         Title = $"Product: {i + 1}",
                         StockCount = random.Next(0, 10),
                         Price = double.Parse($"{random.Next(1, 10)}.{random.Next(0, 99)}"),

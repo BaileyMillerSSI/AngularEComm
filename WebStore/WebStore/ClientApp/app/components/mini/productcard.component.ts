@@ -1,5 +1,8 @@
 ﻿import { Component, Input } from '@angular/core';
 
+
+import { CartService } from '../../services/cart.service';
+
 import { Product } from '../../models/product.interface';
 
 @Component({
@@ -8,21 +11,33 @@ import { Product } from '../../models/product.interface';
     templateUrl: './productcard.component.html'
 })
 export class ProductCardComponent implements Product {
-    
+
+
+    constructor(private CartService: CartService)
+    {
+
+    }
+
     @Input() price: number;
     @Input() stockCount: number;
     @Input() isSaleItem: boolean;
     @Input() title: string;
     @Input() url: string;
+    @Input() id: string;
 
     public GetCanBuy(): string
     {
         if (this.IsAvailable()) {
-            return `BUY NOW`;
+            return `Add to Cart`;
         } else
         {
             return `N/A`;
         }
+    }
+
+    public AppendToCart()
+    {
+        this.CartService.AddItem(this.id);
     }
 
     public IsAvailable(): boolean
