@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductCardComponent } from './components/mini/productcard.component';
 import { SavingComponent } from './components/saving/saving.component';
 import { LoadButtonComponent } from './components/load-button/load-button.component';
+import { GithubButtonComponent } from './components/github-button/github-button.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { LoadButtonComponent } from './components/load-button/load-button.compon
         HomeComponent,
         ProductCardComponent,
         SavingComponent,
-        LoadButtonComponent
+        LoadButtonComponent,
+        GithubButtonComponent
     ],
     imports: [
         CommonModule,
