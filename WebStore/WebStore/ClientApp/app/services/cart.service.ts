@@ -28,7 +28,7 @@ export class CartService {
         var runningTotal: number = 0;
         this.ShoppingCart.map(prodId =>
         {
-            var product = this.CatalogService.products.filter(x => x.id == prodId).forEach(x => runningTotal += x.price);
+            this.CatalogService.products.filter(x => x.id == prodId).forEach(x => runningTotal += x.price);
         });
 
         return runningTotal;
