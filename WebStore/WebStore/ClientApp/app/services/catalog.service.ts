@@ -41,4 +41,22 @@ export class CatalogService
                 this.loading = false;
             });
     }
+
+    CanInfiniteScroll(): boolean
+    {
+        if (this.IsMobile() && this.products.length < 200)
+            return false;
+        else
+            return true;
+    }
+
+    private IsMobile(): boolean
+    {
+        var agent = navigator.userAgent;
+
+        var match = agent.match('iPhone|Android');
+
+        return match != null;
+    }
+    
 }

@@ -41,7 +41,7 @@ export class HomeComponent
 
         var percentageOfScreen = (verticalOffset / divHeight) * 100;
 
-        if (percentageOfScreen >= 85 && this.CatalogService.loading == false && this.CatalogService.products.length < 200)
+        if (percentageOfScreen >= 85 && this.CatalogService.loading == false && this.CatalogService.CanInfiniteScroll())
         {
             this.LoadMore();
         }
