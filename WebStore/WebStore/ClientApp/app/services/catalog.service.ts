@@ -42,6 +42,17 @@ export class CatalogService
             });
     }
 
+    UpdateStock(id: string, change: number = -1): void
+    {
+        //Find that product in the collection
+        this.products.map(product => {
+
+            if (product.id == id)
+                product.stockCount += change;
+
+        });
+    }
+
     CanInfiniteScroll(): boolean
     {
         if (this.IsMobile() && this.products.length > 200)
