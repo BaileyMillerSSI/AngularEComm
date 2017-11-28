@@ -44,7 +44,7 @@ export class CatalogService
 
     CanInfiniteScroll(): boolean
     {
-        if (this.IsMobile() && this.products.length < 200)
+        if (this.IsMobile() && this.products.length > 200)
             return false;
         else
             return true;
