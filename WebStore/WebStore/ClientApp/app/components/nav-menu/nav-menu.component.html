@@ -1,5 +1,5 @@
 ﻿<nav class="navbar fixed-top navbar-light bg-faded">
-    <a class="navbar-brand FakeClickable">View Cart <span class="badge badge-default">{{CartService.GetItemCount()}}</span></a>
+    <a class="navbar-brand FakeClickable">Items in Cart <span class="badge badge-default">{{CartService.GetItemCount()}}</span> <i *ngIf="CartService.GetItemCount() != 0">{{CartService.GetTotalCost() | currency:'USD':'symbol'}}</i></a>
     <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>-->
